@@ -1,0 +1,11 @@
+.expense-date {
+    width: 50%;
+    border: 2px solid;
+    text-align: center;   
+    background-color: darkslategray;
+    padding: 10px;
+}
+
+.expense-date__day {
+    color: whitesmoke;
+}

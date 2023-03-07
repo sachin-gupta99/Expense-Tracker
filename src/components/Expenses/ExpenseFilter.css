@@ -1,0 +1,29 @@
+.expense-filter {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 10px auto 20px auto;
+  background-color: darkseagreen;
+  border: 2px solid peru;
+  border-radius: 20px;
+  box-shadow: 0 0 6px 2px darkseagreen;
+}
+
+.expense-filter__heading {
+  order: 1;
+  width: 50%;
+  text-align: center;
+}
+
+.expense-filter__year {
+  order: 2;
+  width: 50%;
+  text-align: center;
+}
+
+.expense-filter__year select {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}

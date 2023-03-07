@@ -1,0 +1,45 @@
+.expense-item {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    background-color: bisque;
+    transition-duration: 0.8s;
+}
+
+.expense-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 10px darkslategray;
+    cursor: pointer;
+}
+
+.expense-item__date {
+    order: 1;
+    text-align: left;
+    width: 33%;
+}
+
+.expense-item__description {
+    order: 2;
+    color: darkslategray;
+    font-size: larger;
+    width: 33%;
+}
+
+.expense-item__price {
+    order: 3;
+    width: 33%;
+    text-align: right;
+}
+
+.expense-item__price p {
+    display: inline-block;
+    margin: 0;
+    border: 5px solid darkslategray;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: blue;
+}

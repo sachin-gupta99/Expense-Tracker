@@ -1,0 +1,10 @@
+.expense-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.no-expense-case {
+    text-align: center;
+    font-size: larger;
+    color: brown;
+}

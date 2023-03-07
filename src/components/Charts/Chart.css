@@ -1,0 +1,11 @@
+.chart {
+    width: 80%;
+    margin: auto;
+    border: 2px solid palevioletred;
+    border-radius: 20px ;
+    background-color: lightpink;
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    box-shadow: 0 0 6px 4px palevioletred;
+}
