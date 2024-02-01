@@ -4,8 +4,10 @@ import "./NewExpense.css";
 
 const NewExpense = (props) => {
   const SubmitHandler = (expenseData) => {
+    const crypto = window.crypto || window.msCrypto;
+    const array = new Uint32Array(1);
     const expenseDataModified = {
-      id: Math.random().toString(),
+      id: crypto.getRandomValues(array)[0].toString(),
       ...expenseData,
     };
     props.onSubmitNewExpense(expenseDataModified);
