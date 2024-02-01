@@ -13,8 +13,8 @@ const ExpenseFilter = (props) => {
         <p>Filter By Year</p>
       </div>
       <div className="expense-filter__year">
-        <select onChange={changeHandler}>
-          <option selected value={0}>--select--</option>
+        <select onChange={changeHandler} defaultChecked={0}>
+          <option value={0}>--select--</option>
           <option value={2019}>2019</option>
           <option value={2020}>2020</option>
           <option value={2021}>2021</option>

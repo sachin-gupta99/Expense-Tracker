@@ -1,24 +1,27 @@
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import ExpenseFilter from "./ExpenseFilter";
 import ExpenseList from "./ExpenseList";
+import ExpenseChart from "./ExpenseChart";
 import Card from "../UI/Card";
 import "./Expenses.css";
-import { useState } from "react";
-import ExpenseChart from "./ExpenseChart";
 
-function Expenses(props) {
-  let filteredExpenses = props.data;
+const Expenses = (props) => {
+  const [filteredExpenses, setFilteredExpenses] = useState(props.data);
   const [filterYear, setFilterYear] = useState(0);
   const changeHandler = (year) => {
     setFilterYear(year);
   };
 
-  if(filterYear) {
-    filteredExpenses = props.data.filter(item => {
-      const expenseDate = new Date(item.date);
-      return expenseDate.getFullYear() === filterYear;
-    });
-  }
-  
+  useEffect(() => {
+    if (filterYear) {
+      setFilteredExpenses(
+        props.data.filter((item) => item.date.getFullYear() === filterYear)
+      );
+    } else {
+      setFilteredExpenses(props.data);
+    }
+  }, [filterYear, props.data]);
 
   return (
     <Card className="expenses">
@@ -27,6 +30,17 @@ function Expenses(props) {
       <ExpenseList items={filteredExpenses} />
     </Card>
   );
-}
+};
+
+Expenses.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      date: PropTypes.object.isRequired,
+    })
+  ).isRequired,
+};
 
 export default Expenses;
