@@ -1,5 +1,7 @@
-import "./Chart.css";
+import PropTypes from "prop-types";
 import ChartBar from "./ChartBar";
+import "./Chart.css";
+
 const Chart = (props) => {
   const dataPointValues = props.dataPoints.map(dataPoint => dataPoint.value);
   const maxValue = Math.max(...dataPointValues);
@@ -18,6 +20,15 @@ const Chart = (props) => {
       })}
     </div>
   );
+};
+
+Chart.propTypes = {
+  dataPoints: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Chart;
