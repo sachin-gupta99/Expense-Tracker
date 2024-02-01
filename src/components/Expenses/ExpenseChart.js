@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Chart from "../Charts/Chart";
 
 const ExpenseChart = props => {
@@ -26,6 +27,17 @@ const ExpenseChart = props => {
     return (
         <Chart dataPoints={chartDataPoints}/>
     )
+};
+
+ExpenseChart.propTypes = {
+    expenses: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            amount: PropTypes.number.isRequired,
+            date: PropTypes.string.isRequired,
+        })
+    ).isRequired,
 };
 
 export default ExpenseChart;

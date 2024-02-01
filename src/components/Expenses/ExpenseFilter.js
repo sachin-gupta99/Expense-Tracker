@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ExpenseFilter.css";
 
 const ExpenseFilter = (props) => {
@@ -22,6 +23,10 @@ const ExpenseFilter = (props) => {
       </div>
     </div>
   );
+};
+
+ExpenseFilter.propTypes = {
+  onChangeYear: PropTypes.func.isRequired,
 };
 
 export default ExpenseFilter;

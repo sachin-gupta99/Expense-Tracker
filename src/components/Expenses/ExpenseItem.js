@@ -1,8 +1,10 @@
+import PropTypes from "prop-types";
+
 import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   return (
     <li>
       <Card className="expense-item">
@@ -16,6 +18,12 @@ function ExpenseItem(props) {
       </Card>
     </li>
   );
-}
+};
+
+ExpenseItem.propTypes = {
+  date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+};
 
 export default ExpenseItem;

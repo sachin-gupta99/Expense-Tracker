@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import "./ChartBar.css";
 
 const ChartBar = (props) => {
@@ -15,6 +16,12 @@ const ChartBar = (props) => {
       <div className="chart-bar__label">{props.label}</div>
     </div>
   );
+};
+
+ChartBar.propTypes = {
+  value: PropTypes.number.isRequired,
+  maxValue: PropTypes.number.isRequired,
+  label: PropTypes.string.isRequired,
 };
 
 export default ChartBar;
