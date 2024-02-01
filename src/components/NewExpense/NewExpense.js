@@ -1,5 +1,6 @@
-import "./NewExpense.css";
+import PropTypes from "prop-types";
 import ExpenseForm from "./ExpenseForm";
+import "./NewExpense.css";
 
 const NewExpense = (props) => {
   const SubmitHandler = (expenseData) => {
@@ -15,6 +16,10 @@ const NewExpense = (props) => {
       <ExpenseForm onSubmitExpense={SubmitHandler} />
     </div>
   );
+};
+
+NewExpense.propTypes = {
+  onSubmitNewExpense: PropTypes.func.isRequired,
 };
 
 export default NewExpense;
