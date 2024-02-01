@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import "./ExpenseForm.css";
 
@@ -16,20 +17,14 @@ const ExpenseForm = (props) => {
 
   const changeFlag = () => {
     clear();
-    setFlag(flag ? false : true);
+    setFlag(!flag);
   };
 
-  const changeTitleHandler = (event) => {
-    setEnteredTitle(event.target.value);
-  };
+  const changeTitleHandler = (event) => setEnteredTitle(event.target.value);
 
-  const changeAmountHandler = (event) => {
-    setEnteredAmount(event.target.value);
-  };
+  const changeAmountHandler = (event) => setEnteredAmount(event.target.value);
 
-  const changeDateHandler = (event) => {
-    setEnteredDate(event.target.value);
-  };
+  const changeDateHandler = (event) => setEnteredDate(event.target.value);
 
   const SubmitHandler = (event) => {
     event.preventDefault();
@@ -60,7 +55,7 @@ const ExpenseForm = (props) => {
     <form onSubmit={SubmitHandler}>
       <div className="expense-form">
         <div className="new-expense__particulars new-expense__title">
-          <label for="title">Title</label>
+          <label htmlFor="title">Title</label>
           <br />
           <input
             type="text"
@@ -71,7 +66,7 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__particulars new-expense__amount">
-          <label for="amount">Amount</label>
+          <label htmlFor="amount">Amount</label>
           <br />
           <input
             type="number"
@@ -82,7 +77,7 @@ const ExpenseForm = (props) => {
           />
         </div>
         <div className="new-expense__particulars new-expense__date">
-          <label for="date">Date</label>
+          <label htmlFor="date">Date</label>
           <br />
           <input
             type="date"
@@ -99,11 +94,17 @@ const ExpenseForm = (props) => {
           </button>
         </div>
         <div className="add">
-          <button type="submit" className="form-button">Add Expense</button>
+          <button type="submit" className="form-button">
+            Add Expense
+          </button>
         </div>
       </div>
     </form>
   );
+};
+
+ExpenseForm.propTypes = {
+  onSubmitExpense: PropTypes.func.isRequired,
 };
 
 export default ExpenseForm;

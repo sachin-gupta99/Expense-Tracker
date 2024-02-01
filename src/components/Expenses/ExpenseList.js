@@ -28,7 +28,7 @@ ExpenseList.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,
-      date: PropTypes.object.isRequired,
+      date: PropTypes.string.isRequired,
     })
   ).isRequired,
 };

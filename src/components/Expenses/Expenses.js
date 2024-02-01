@@ -16,7 +16,9 @@ const Expenses = (props) => {
   useEffect(() => {
     if (filterYear) {
       setFilteredExpenses(
-        props.data.filter((item) => item.date.getFullYear() === filterYear)
+        props.data.filter(
+          (item) => new Date(item.date).getFullYear() === filterYear
+        )
       );
     } else {
       setFilteredExpenses(props.data);
@@ -38,7 +40,7 @@ Expenses.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       amount: PropTypes.number.isRequired,
-      date: PropTypes.object.isRequired,
+      date: PropTypes.string.isRequired,
     })
   ).isRequired,
 };
