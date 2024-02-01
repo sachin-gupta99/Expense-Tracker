@@ -26,3 +26,9 @@ Thumbs.db
 # Ignore sensitive or personal files
 config.ini
 secrets.txt
+
+# Ignore files generated during build
+.firebase/
+.firebaserc
+firebase.json
+
